@@ -1,14 +1,5 @@
-sc2replay-csharp
+sc2-chateditor
 ================
-#### C# library for extracting player and game information from .sc2replay files. ####
+#### .NET 4.0 Application for editting the chat log in .sc2replay files for Starcraft 2 ####
 
-This is an easy-to-use library to quickly parse and extract information from the undocumented .sc2replay format. The project has a side goal of creating an in-depth wiki with replay file documentation.
-
-Current Abilities
-================
-* Parses basic player and matchup information.
-* Parses entire chat log.
-* Can insert lines of text into the chat log for any player.
-* Can clear the in-game chat for a "clean" replay.
-
-You can find and contribute information in deconstructing the file format in the wiki: <https://github.com/ascendedguard/sc2replay-csharp/wiki>
+Requires .NET 4.0 Client Framework to be installed. Other unknown dependencies may exist based on MpqLib.dll
