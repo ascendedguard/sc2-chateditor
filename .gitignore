@@ -1,0 +1,6 @@
+_Resharper.sc2-chateditor/*
+sc2-chateditor/bin
+sc2-chateditor/obj
+*.suo
+*.ReSharper.user
+*StyleCop.Cache
