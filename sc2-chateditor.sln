@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sc2-chateditor", "sc2-chateditor\sc2-chateditor.csproj", "{1E92C308-89D0-47B3-AB34-5E5C573C690F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E92C308-89D0-47B3-AB34-5E5C573C690F}.Debug|x86.ActiveCfg = Debug|x86
+		{1E92C308-89D0-47B3-AB34-5E5C573C690F}.Debug|x86.Build.0 = Debug|x86
+		{1E92C308-89D0-47B3-AB34-5E5C573C690F}.Release|x86.ActiveCfg = Release|x86
+		{1E92C308-89D0-47B3-AB34-5E5C573C690F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

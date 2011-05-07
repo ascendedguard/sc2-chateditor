@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Starcraft2.ChatEditor.View.ReplayEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ChatEditor="clr-namespace:Starcraft2.ChatEditor" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:View="clr-namespace:Starcraft2.ChatEditor.View" d:DesignHeight="419" d:DesignWidth="551">
+    <Grid Background="White">
+        <ListBox Margin="12,12,12,81" ItemsSource="{Binding ChatCollection.View}" SelectedItem="{Binding SelectedChatMessage}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <View:ChatMessageDisplayView />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Clear All" Command="{Binding ClearAllCommand}" Height="23" HorizontalAlignment="Left" Margin="12,0,0,12" VerticalAlignment="Bottom" Width="96" />
+        <Button Command="{Binding RemoveSelectedCommand}" Content="Remove Selected" Height="23" HorizontalAlignment="Left" Margin="114,0,0,12" VerticalAlignment="Bottom" Width="96" />
+        <Button Command="{Binding AddNewCommand}" Content="Add New" Height="23" HorizontalAlignment="Left" Margin="216,0,0,12" VerticalAlignment="Bottom" Width="96" />
+
+        <ContentPresenter Content="{Binding ChatMessageEditor}" Height="34" VerticalAlignment="Bottom" Margin="12,0,12,41" />
+        <Button Command="{Binding SaveAsCommand}" Content="Save As..." Height="23" HorizontalAlignment="Left" Margin="318,0,0,12" VerticalAlignment="Bottom" Width="96" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Starcraft2.ChatEditor.View.ChatMessageDisplayView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding Path=ChatMessage.Timestamp}" />
+        <TextBlock Grid.Column="1" Text="{Binding Path=ChatMessage.MessageTarget, StringFormat={}[{0}]}" />
+        <TextBlock Grid.Column="2">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0}: {1}">
+                    <Binding Path="Player.Name" />
+                    <Binding Path="ChatMessage.Message" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </Grid>
+</UserControl>
