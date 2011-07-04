@@ -15,9 +15,9 @@ namespace Starcraft2.ChatEditor.ViewModel
 
     public class ChatMessageEditViewModel : ObservableObject
     {
-        private PlayerDetails[] playerList;
+        private Player[] playerList;
 
-        public PlayerDetails[] PlayerList
+        public Player[] PlayerList
         {
             get
             {
@@ -31,9 +31,9 @@ namespace Starcraft2.ChatEditor.ViewModel
             }
         }
 
-        private PlayerDetails selectedPlayer;
+        private Player selectedPlayer;
 
-        public PlayerDetails SelectedPlayer
+        public Player SelectedPlayer
         {
             get
             {

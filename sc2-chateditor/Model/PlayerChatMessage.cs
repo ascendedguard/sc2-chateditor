@@ -15,11 +15,11 @@ namespace Starcraft2.ChatEditor.Model
     /// <summary> Combines a ChatMessage with it's appropriate Player, based on PlayerId. </summary>
     public class PlayerChatMessage : ObservableObject
     {
-        private PlayerDetails player;
+        private Player player;
 
         private ChatMessage chatMessage;
 
-        public PlayerDetails Player
+        public Player Player
         {
             get
             {
