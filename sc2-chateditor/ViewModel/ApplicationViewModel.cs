@@ -73,6 +73,21 @@ namespace Starcraft2.ChatEditor.ViewModel
             }
         }
         
+        public void LoadReplay(string fileName)
+        {
+            var replay = new ReplayEditorViewModel(fileName);
+            replay.CloseRequested += (sender, e) =>
+            {
+                this.OpenReplays.Remove(replay);
+                if (this.OpenReplays.Count == 0)
+                {
+                    this.CollectionHasItems = false;
+                }
+            };
+            this.openReplays.Add(replay);
+            this.SelectedReplay = replay;
+            this.CollectionHasItems = true;            
+        }
 
         private void LoadReplay()
         {
@@ -81,18 +96,7 @@ namespace Starcraft2.ChatEditor.ViewModel
 
             if (ofd.ShowDialog() == true)
             {
-                var replay = new ReplayEditorViewModel(ofd.FileName);
-                replay.CloseRequested += (sender, e) =>
-                    {
-                        this.OpenReplays.Remove(replay);
-                        if (this.OpenReplays.Count == 0)
-                        {
-                            this.CollectionHasItems = false;
-                        }
-                    };
-                this.openReplays.Add(replay);
-                this.SelectedReplay = replay;
-                this.CollectionHasItems = true;
+                this.LoadReplay(ofd.FileName);
             }
         }
 

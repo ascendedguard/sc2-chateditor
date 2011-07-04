@@ -8,7 +8,7 @@
     <Window.DataContext>
         <ViewModel:ApplicationViewModel />
     </Window.DataContext>
-    <Grid Background="#2f2f2f">
+    <Grid Background="#2f2f2f" Drop="FileDrop" AllowDrop="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="45" />
