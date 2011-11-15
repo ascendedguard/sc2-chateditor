@@ -4,3 +4,4 @@ sc2-chateditor/obj
 *.suo
 *.ReSharper.user
 *StyleCop.Cache
+*.dotCover

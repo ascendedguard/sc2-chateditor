@@ -14,6 +14,7 @@ namespace Starcraft2.ChatEditor.ViewModel
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.IO;
+    using System.Windows;
     using System.Windows.Data;
     using System.Windows.Input;
 
@@ -67,7 +68,16 @@ namespace Starcraft2.ChatEditor.ViewModel
         {
             this.CurrentFile = replayPath;
 
-            this.replay = Replay.Parse(this.CurrentFile);
+            try
+            {
+                this.replay = Replay.Parse(this.CurrentFile);                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The replay failed to load. Reason: " + ex.Message);
+                return;
+            }
+
             this.ReplayHeader = Path.GetFileName(this.CurrentFile);
             var messages = new ObservableCollection<PlayerChatMessage>();
 
@@ -170,6 +180,15 @@ namespace Starcraft2.ChatEditor.ViewModel
                 
                 foreach (var msg in this.ChatMessages)
                 {
+                    if (msg.ChatMessage.Message.Length > 64)
+                    {
+                        MessageBox.Show(
+                            "The following message was over 64 characters: " + Environment.NewLine
+                            + msg.ChatMessage.Message + Environment.NewLine +
+                            "This line of text was shortened to fit.");
+                        msg.ChatMessage.Message = msg.ChatMessage.Message.Substring(0, 64);
+                    }
+
                     messages.Add(msg.ChatMessage);
                 }
 
